@@ -207,22 +207,25 @@ namespace ContactsBookApp
             Console.ReadKey();
         }
 
-        private void ListContacts()
+       private void ListContacts()
+{
+    Console.WriteLine("\n-- List All Contacts --");
+    if (contacts.Count == 0)
+    {
+        Console.WriteLine("No contacts available.");
+    }
+    else
+    {
+        int index = 1;
+        foreach (Contact c in contacts)
         {
-            Console.WriteLine("\n-- List All Contacts --");
-            if (contacts.Count == 0)
-            {
-                Console.WriteLine("No contacts available.");
-            }
-            else
-            {
-                int index = 1;
-                foreach (Contact c in contacts)
-                {
-                    Console.WriteLine($"{index++}. {c}");
-                }
-            }
+            Console.WriteLine($"{index++}. {c}");
         }
+    }
+    Console.WriteLine("Press any key to continue...");
+    Console.ReadKey(); 
+}
+
 
         private void RemoveContact()
         {
@@ -261,4 +264,3 @@ namespace ContactsBookApp
         }
     }
 }
-
